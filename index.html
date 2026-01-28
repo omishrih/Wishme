@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday My Love</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Background Blur Shapes -->
+  <div class="bg-orbs">
+    <span class="orb orb1"></span>
+    <span class="orb orb2"></span>
+    <span class="orb orb3"></span>
+  </div>
+
+  <!-- Floating Hearts -->
+  <div class="hearts"></div>
+
+  <!-- Music Player (Playlist) -->
+  <div class="music-player glass">
+    <div class="music-info">
+      <div id="songName">🎵 Ready to play</div>
+
+      <div class="progress-container" id="progressContainer">
+        <div class="progress" id="progress"></div>
+      </div>
+    </div>
+
+    <div class="music-controls">
+      <button id="prevBtn" class="music-btn small">⏮</button>
+      <button id="musicToggle" class="music-btn">▶️</button>
+      <button id="nextBtn" class="music-btn small">⏭</button>
+    </div>
+
+    <audio id="bgMusic"></audio>
+  </div>
+
+  <!-- Input Modal -->
+  <div class="modal" id="inputModal">
+    <div class="modalBox glass inputForm">
+      <div class="modal-badge">🎂 Birthday Surprise</div>
+      <h2>Let's Celebrate 💖</h2>
+      <p class="desc">Enter her name & birth date to unlock the surprise ✨</p>
+
+      <input type="text" id="nameInput" placeholder="Enter her name" class="input-field" />
+      <input type="date" id="dobInput" class="input-field" />
+
+      <button class="btn" id="submitBtn">Unlock Surprise 💝</button>
+
+      <p class="tiny-note">Tip: Enable music for best experience 🎶</p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <!-- Navigation -->
+<nav class="navbar glass hidden" id="navbar">
+  <div class="nav-container">
+    <div class="nav-brand">🎂 BirthdayHub</div>
+
+    <!-- ✅ Toggle Button -->
+    <button class="nav-toggle" id="navToggle">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#" data-page="home" class="nav-link active">Home</a>
+      <a href="#" data-page="gallery" class="nav-link">Gallery</a>
+      <a href="#" data-page="surprise" class="nav-link">Surprise</a>
+      <a href="#" data-page="letters" class="nav-link">Letters</a>
+      <button class="btn-small" id="resetBtn">Reset</button>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Main Container -->
+  <div class="container hidden" id="mainContainer">
+
+    <!-- HOME PAGE -->
+    <div id="homePage" class="page active">
+
+      <header class="header glass hero">
+        <div class="hero-top">
+          <div class="hero-chip">💖 Love • Memories • Surprise</div>
+          <div class="hero-live">
+            <span class="dot-live"></span>
+            <span>Live Celebration</span>
+          </div>
+        </div>
+
+        <h1>Happy Birthday, <span id="gfName">My Love</span> 🎉</h1>
+        <p class="subtitle">You are my favorite reason to smile 💕</p>
+
+        <div class="hero-actions">
+          <button class="btn btn2" id="openLetter">💌 Love Letter</button>
+          <button class="btn" data-go="surprise">🎁 Open Surprise</button>
+        </div>
+      </header>
+
+      <!-- Cake Cutting -->
+      <section class="section glass cake-section">
+        <h2>🎂 Cake Cutting Time!</h2>
+        <p class="desc">Tap the knife to cut the cake and make a wish ✨</p>
+
+        <div class="cake-container">
+
+          <div class="cake-real-wrap">
+            <div class="cake-real" id="cakeReal">
+              <svg viewBox="0 0 520 420" class="cake-svg" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="260" cy="360" rx="180" ry="34" fill="rgba(0,0,0,0.25)"/>
+                <ellipse cx="260" cy="360" rx="210" ry="44" fill="rgba(255,255,255,0.12)"/>
+                <ellipse cx="260" cy="360" rx="160" ry="28" fill="rgba(255,255,255,0.18)"/>
+
+                <g id="cakeBody">
+                  <path d="M120 320 C120 270 400 270 400 320 L400 330 C400 360 120 360 120 330 Z" fill="#f7b267"/>
+                  <path d="M120 320 C120 290 400 290 400 320 C400 340 120 340 120 320 Z" fill="#f79d65" opacity="0.8"/>
+
+                  <path d="M150 260 C150 210 370 210 370 260 L370 310 C370 330 150 330 150 310 Z" fill="#ff7aa2"/>
+                  <path d="M150 260 C150 230 370 230 370 260 C370 280 150 280 150 260 Z" fill="#ff5d8f" opacity="0.85"/>
+
+                  <path d="M175 200 C175 150 345 150 345 200 L345 250 C345 268 175 268 175 250 Z" fill="#a29bfe"/>
+                  <path d="M175 200 C175 168 345 168 345 200 C345 218 175 218 175 200 Z" fill="#7c6cf5" opacity="0.85"/>
+
+                  <path d="M175 205 
+                          C200 230 210 180 230 212
+                          C250 255 270 185 290 220
+                          C310 250 325 190 345 220
+                          L345 230
+                          C345 200 175 200 175 230 Z"
+                        fill="#fff" opacity="0.92"/>
+
+                  <g opacity="0.9">
+                    <circle cx="205" cy="210" r="4" fill="#ffcc00"/>
+                    <circle cx="225" cy="230" r="4" fill="#00c6ff"/>
+                    <circle cx="255" cy="215" r="4" fill="#ff2d78"/>
+                    <circle cx="280" cy="235" r="4" fill="#25d366"/>
+                    <circle cx="310" cy="215" r="4" fill="#ffa94d"/>
+                    <circle cx="230" cy="248" r="4" fill="#f093fb"/>
+                    <circle cx="270" cy="248" r="4" fill="#ffffff"/>
+                    <circle cx="300" cy="245" r="4" fill="#ffcc00"/>
+                  </g>
+                </g>
+
+                <g id="candles">
+                  <g class="candle">
+                    <rect x="220" y="115" width="16" height="54" rx="8" fill="#ff9442"/>
+                    <circle cx="228" cy="105" r="10" fill="rgba(255,204,0,0.6)" class="flameGlow"/>
+                    <path d="M228 96 C220 105 224 116 228 120 C232 116 236 105 228 96Z" fill="#ffcc00" class="flame"/>
+                  </g>
+                  <g class="candle">
+                    <rect x="252" y="105" width="16" height="64" rx="8" fill="#ff6b6b"/>
+                    <circle cx="260" cy="95" r="10" fill="rgba(255,204,0,0.6)" class="flameGlow"/>
+                    <path d="M260 86 C252 95 256 106 260 110 C264 106 268 95 260 86Z" fill="#ffcc00" class="flame"/>
+                  </g>
+                  <g class="candle">
+                    <rect x="284" y="115" width="16" height="54" rx="8" fill="#00c6ff"/>
+                    <circle cx="292" cy="105" r="10" fill="rgba(255,204,0,0.6)" class="flameGlow"/>
+                    <path d="M292 96 C284 105 288 116 292 120 C296 116 300 105 292 96Z" fill="#ffcc00" class="flame"/>
+                  </g>
+                </g>
+
+                <g id="cakeSlice" class="cake-slice">
+                  <path d="M260 145 
+                          C290 150 315 160 330 175 
+                          C345 190 345 240 345 265 
+                          C345 292 335 335 310 350
+                          C280 365 270 360 260 350 Z"
+                        fill="rgba(0,0,0,0.18)"/>
+
+                  <path d="M260 140 
+                          C290 148 318 158 335 175 
+                          C350 190 350 240 350 265 
+                          C350 295 335 340 312 355
+                          C285 372 272 365 260 350 Z"
+                        fill="#ffffff" opacity="0.9"/>
+
+                  <path d="M260 155 
+                          C290 160 308 168 322 180
+                          C336 193 336 240 336 262
+                          C336 290 327 328 310 338
+                          C290 350 274 345 260 338 Z"
+                        fill="#ff7aa2" opacity="0.95"/>
+                </g>
+              </svg>
+            </div>
+
+            <div class="knife-real" id="knife">🔪</div>
+          </div>
+
+          <button class="btn btn-cut" id="cakeBtn">Cut the Cake 🎂</button>
+        </div>
+
+        <p id="cakeMessage" class="cake-message hidden">🎉 Wish Granted! 🎉</p>
+      </section>
+
+      <!-- Counter -->
+      <section class="section glass">
+        <h2>⏳ Countdown To Birthday</h2>
+        <p class="desc">Every second is closer to your special day 💕</p>
+
+        <div class="counter">
+          <div class="box"><h3 id="days">0</h3><p>Days</p></div>
+          <div class="box"><h3 id="hours">0</h3><p>Hours</p></div>
+          <div class="box"><h3 id="minutes">0</h3><p>Minutes</p></div>
+          <div class="box"><h3 id="seconds">0</h3><p>Seconds</p></div>
+        </div>
+        <p class="age-text" id="ageText"></p>
+      </section>
+
+      <!-- Share -->
+      <section class="section glass">
+        <h2>📱 Share The Joy</h2>
+        <p class="desc">Send it to her on WhatsApp & make her smile 😊</p>
+
+        <div class="share-buttons">
+          <button class="share-btn whatsapp" id="shareWhatsApp">WhatsApp 💬</button>
+          <button class="share-btn facebook" id="shareFacebook">Facebook 👍</button>
+          <button class="share-btn twitter" id="shareTwitter">Twitter 🐦</button>
+        </div>
+      </section>
+    </div>
+
+    <!-- GALLERY -->
+    <div id="galleryPage" class="page hidden">
+      <header class="header glass">
+        <h1>📸 Memory Lane</h1>
+        <p class="subtitle">The moments I want forever 💕</p>
+      </header>
+
+      <section class="section glass">
+        <div class="slideshow-container">
+          <div class="slideshow">
+            <div class="slide fade">
+              <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=900&q=60" />
+              <div class="slide-caption">Our First Smile Together 💕</div>
+            </div>
+            <div class="slide fade">
+              <img src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=900&q=60" />
+              <div class="slide-caption">That Day I Felt Lucky 🌸</div>
+            </div>
+            <div class="slide fade">
+              <img src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=900&q=60" />
+              <div class="slide-caption">Forever With You 🌙</div>
+            </div>
+            <div class="slide fade">
+              <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=900&q=60" />
+              <div class="slide-caption">You Make Me Happy 😊</div>
+            </div>
+            <div class="slide fade">
+              <img src="https://images.unsplash.com/photo-1516031643cf73a29eaab72b6a89dae5b7562364?auto=format&fit=crop&w=900&q=60" />
+              <div class="slide-caption">My Greatest Adventure 🌍</div>
+            </div>
+          </div>
+
+          <button class="slide-btn prev" id="prevSlide">❮</button>
+          <button class="slide-btn next" id="nextSlide">❯</button>
+
+          <div class="slide-dots" id="slideDots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+
+        <div class="slideshow-controls">
+          <button class="btn btn-small" id="autoPlayBtn">▶ Auto Play</button>
+          <button class="btn btn-small" id="stopPlayBtn">⏹ Stop</button>
+        </div>
+      </section>
+
+      <section class="section glass">
+        <h2>💌 Share Memories</h2>
+        <button class="btn btn2" id="shareGalleryWhatsApp">Share This Gallery 📸</button>
+      </section>
+    </div>
+
+    <!-- SURPRISE -->
+    <div id="surprisePage" class="page hidden">
+      <header class="header glass">
+        <h1>🎁 Birthday Surprise</h1>
+        <p class="subtitle">This one is only for you 💝</p>
+      </header>
+
+      <section class="section glass">
+        <div class="surprise-box">
+          <div class="gift-box" id="giftBox">
+            <div class="gift-top"></div>
+            <div class="gift-body"></div>
+            <div class="gift-ribbon"></div>
+            <div class="gift-bow"></div>
+          </div>
+        </div>
+        <button class="btn btn2" id="openGiftBtn">🎀 Read My Heart</button>
+      </section>
+
+      <section class="section glass hidden" id="surpriseContent">
+        <h2>🎉 Surprise Revealed!</h2>
+        <div class="surprise-message">
+          <h3>Happy Birthday, <span id="surpriseName">My Love</span>! 🎂</h3>
+
+          <!-- ✅ animated text -->
+          <p id="heartText" class="heart-text typing-cursor"></p>
+
+          <div class="confetti-container" id="confetti"></div>
+        </div>
+        <button class="btn" id="celebrateBtn">🎊 Celebrate!</button>
+      </section>
+    </div>
+
+    <!-- LETTERS -->
+    <div id="lettersPage" class="page hidden">
+      <header class="header glass">
+        <h1>💌 Open When...</h1>
+        <p class="subtitle">Small letters, big love 💖</p>
+      </header>
+
+      <section class="letters-grid">
+        <div class="letter-card" data-letter="0"><div class="letter-icon">📖</div><h3>Open When...</h3><p>You're Sad</p></div>
+        <div class="letter-card" data-letter="1"><div class="letter-icon">😊</div><h3>Open When...</h3><p>You're Happy</p></div>
+        <div class="letter-card" data-letter="2"><div class="letter-icon">💪</div><h3>Open When...</h3><p>You Need Strength</p></div>
+        <div class="letter-card" data-letter="3"><div class="letter-icon">❤️</div><h3>Open When...</h3><p>You Miss Me</p></div>
+        <div class="letter-card" data-letter="4"><div class="letter-icon">🌟</div><h3>Open When...</h3><p>You Doubt Yourself</p></div>
+        <div class="letter-card" data-letter="5"><div class="letter-icon">🎂</div><h3>Open When...</h3><p>It's Your Birthday</p></div>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <p>Made with ❤️ by <span id="yourName">Akash</span></p>
+    </footer>
+  </div>
+
+  <!-- Love Letter Modal -->
+  <div class="modal hidden" id="letterModal">
+    <div class="modalBox glass">
+      <h2>💌 My Love Letter</h2>
+      <p id="letterText"></p>
+      <button class="btn close" id="closeLetter">Close ❌</button>
+    </div>
+  </div>
+
+  <!-- Open When Letters Modal -->
+  <div class="modal hidden" id="letterContentModal">
+    <div class="modalBox glass">
+      <h2 id="letterTitle">💌 Letter</h2>
+      <p id="letterContent"></p>
+      <button class="btn close" id="closeOpenWhen">Close ❌</button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
